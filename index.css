@@ -1,0 +1,81 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+.container {
+  width: 30rem;
+  padding: 2rem;
+  background-color: black;
+}
+.login-form {
+  width: 100%;
+  height: 100%;
+}
+.login-form-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 3rem auto 1rem;
+}
+.input {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  border-bottom: 0.1rem solid grey;
+  color: lightslategray;
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+.label {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  position: absolute;
+  color: grey;
+  transform: translateY(0.5rem);
+  transform-origin: 0%;
+  transition: transform 500ms;
+}
+.login-form-login {
+  border: none;
+  width: 100%;
+  background-color: orange;
+  padding: 0.5rem 0;
+  margin: 2.5rem 0 0;
+  font-size: 1.8rem;
+  color: whitesmoke;
+  transition: background-color 200ms;
+}
+
+/* input label animation */
+.input:not(:placeholder-shown) + .label,
+.login-form-row:focus-within .label {
+  transform: scale(0.75) translateY(-1.8rem);
+}
+
+/* input border animation */
+.login-form-row::after {
+  position: relative;
+  top: -0.1rem;
+  content: "";
+  width: 0%;
+  margin: 0 auto;
+  height: 0.1rem;
+  background-color: orange;
+  transition: width 500ms;
+}
+.login-form-row:focus-within::after {
+  width: 100%;
+}
+.input:not(:placeholder-shown) {
+  border-color: orange;
+}
+
+/* login click button animation */
+.login-form-login:active {
+  background-color: darkorange;
+}
