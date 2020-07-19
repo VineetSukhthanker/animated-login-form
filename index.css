@@ -21,6 +21,8 @@ html {
   margin: 3rem auto 1rem;
 }
 .input {
+  position: relative;
+  z-index: 1;
   background-color: inherit;
   outline: none;
   border: none;
